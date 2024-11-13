@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-    darkMode: ["class"],
+    darkMode: false,
     content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
@@ -53,7 +53,37 @@ export default {
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
   			}
-  		}
+  		},
+		screens: {
+			'sm': '640px',
+			// => @media (min-width: 640px) { ... }
+	  
+			'md': '768px',
+			// => @media (min-width: 768px) { ... }
+	  
+			'lg': '1024px',
+			// => @media (min-width: 1024px) { ... }
+	  
+			'xl': '1280px',
+			// => @media (min-width: 1280px) { ... }
+	  
+			'2xl': '1536px',
+			// => @media (min-width: 1536px) { ... }
+		},
+		animation: {
+			"text-reveal": "text-reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s",
+		},
+		keyframes: {
+			"text-reveal": {
+			  "0%": {
+				transform: "translate(0, 100%)",
+			  },
+			  "100%": {
+				transform: "translate(0, 0)",
+			  },
+			},
+		}
+
   	}
   },
   plugins: [require("tailwindcss-animate")],
