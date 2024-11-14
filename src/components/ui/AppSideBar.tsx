@@ -25,7 +25,7 @@ const AppSideBar = ({ isDarkMode, handleToggle }: SwitchProps) => {
       <span className="font-semibold pt--10">{/* Printing History */}</span>
       <div className="pt-6"></div>
 
-      <div className="pt-16">
+      <div className="pt-[200px]">
         <FaFileContract size={22} />
       </div>
       <span className="font-semibold pt--1">Lịch Sử</span>

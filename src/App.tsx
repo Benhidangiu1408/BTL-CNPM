@@ -31,29 +31,27 @@ function App() {
     setIsDarkMode(!isDarkMode);
   };
   return (
-    <>
-      <div className="bg-gradient-to-r from-slate-100 to-red-200 ">
-        <ResizablePanelGroup
-          direction="horizontal"
-          className="grid grid-flow-row-dense grid-cols-3 p-0 min-h-[1000px]  min-w-sm md:min-w-md lg:min-w-lg xl:min-w-xl 2xl:min-w-2xl   "
-        >
-          <div className="  sm: hidden md:block  h-full w-1/12  justify-center  ">
-            <AppSideBar isDarkMode={isDarkMode} handleToggle={handleToggle} />
-          </div>{" "}
-          <ResizablePanel defaultSize={25}>
-            <div className="mt-5 mr-3  flex rounded-3xl rounded-t-3xl h-full  min-w-sm md:min-w-md lg:min-w-lg xl:min-w-xl 2xl:min-w-2xl ">
-              <ContentAddFile />
-            </div>
-          </ResizablePanel>
-        </ResizablePanelGroup>
-      </div>
+    <div className="bg-gradient-to-r from-slate-100 to-red-200 ">
+      <ResizablePanelGroup
+        direction="horizontal"
+        className="grid grid-flow-row-dense grid-cols-3 p-0 min-h-[800px]  min-w-sm md:min-w-md lg:min-w-lg xl:min-w-xl 2xl:min-w-2xl   "
+      >
+        <div className="  sm: hidden md:block  h-full w-1/12  justify-center  ">
+          <AppSideBar isDarkMode={isDarkMode} handleToggle={handleToggle} />
+        </div>{" "}
+        <ResizablePanel defaultSize={25}>
+          <div className="mt-5 mr-3  flex rounded-3xl rounded-t-3xl h-full  min-w-sm md:min-w-md lg:min-w-lg xl:min-w-xl 2xl:min-w-2xl  ">
+            <ContentAddFile />
+          </div>
+        </ResizablePanel>
+      </ResizablePanelGroup>
+    </div>
 
-      {/* <div className="bg-red-200 min-h-[1000px] min-w-sm md:min-w-md lg:min-w-lg xl:min-w-xl 2xl:min-w-2xl">
+    /* <div className="bg-red-200 min-h-[1000px] min-w-sm md:min-w-md lg:min-w-lg xl:min-w-xl 2xl:min-w-2xl">
         <div className="h-[600px] ">
           <HomePage />
         </div>
-      </div> */}
-    </>
+      </div> */
   );
 }
 

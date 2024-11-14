@@ -4,9 +4,19 @@
 @layer base {
   :root {
     /* --background: 0 0% 100%; */
-    /* --background:-webkit-linear-gradient(to right, hsl(340, 100%, 90%), hsl(260, 100%, 90%), hsl(220, 100%, 90%));
-     */
-     background: linear-gradient(to right, hsl(340, 100%, 80%), hsl(260, 100%, 80%), hsl(220, 100%, 80%));
+    /* --background: -webkit-linear-gradient(
+      to right,
+      hsl(340, 100%, 90%),
+      hsl(260, 100%, 90%),
+      hsl(220, 100%, 90%)
+    ); */
+
+    --background: -webkit-linear-gradient(
+      to right,
+      hsl(340, 100%, 80%),
+      hsl(260, 100%, 80%),
+      hsl(220, 100%, 80%)
+    );
 
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -31,7 +41,7 @@
     --chart-3: 197 37% 24%;
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
-    --radius: 0.5rem
+    --radius: 0.5rem;
   }
   /* .dark {
     --background: 222.2 84% 4.9%;
