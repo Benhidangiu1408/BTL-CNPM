@@ -7,7 +7,6 @@ import AppSideBar from "./components/ui/AppSideBar";
 import AddFileCard from "./components/ui/AddFileCard";
 import AddFile from "./components/ui/AddFile";
 import ContentAddFile from "./components/ui/ContentAddFile";
-import HomePage from "./HomePage";
 <meta name="viewport" content="width=device-width, initial-scale=1.0"></meta>;
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);

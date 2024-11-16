@@ -8,7 +8,7 @@ import AppSwitch from "./AppSwitch";
 import { FaFileContract } from "react-icons/fa";
 import { IoWalletSharp } from "react-icons/io5";
 import { MdHome } from "react-icons/md";
-const AppSideBar = ({ isDarkMode, handleToggle }: SwitchProps) => {
+const AppSideBar = () => {
   return (
     <div className="flex flex-col  items-center border-none">
       <span className=" pt-14">
