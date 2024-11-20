@@ -51,8 +51,32 @@ const RecentFile = () => {
           </CardContent>
         </Card>
       </div>
+
+      <FileContent />
+      <FileContent />
+      <FileContent />
+      <FileContent />
+      <FileContent />
+      <FileContent />
+      
     </>
   );
+  function FileContent() {
+    return (
+        <div className="w-full text-left leading-1 mt-2">
+        <Card className="bg-gradient-to-r from-red-200 to-orange-200 border-2">
+          <CardHeader className=" pt-2 pb-1">
+            <CardTitle className="text-base">CNXH.pdf</CardTitle>
+          </CardHeader>
+          <CardContent className="pb-2">
+            <p className="text-xs ">
+              8/3/2024 4:05PM LMX-30 100 Trang A3 1 Bản
+            </p>
+          </CardContent>
+        </Card>
+      </div>
+      )
+  }
 };
 
 export default RecentFile;

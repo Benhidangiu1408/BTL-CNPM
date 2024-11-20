@@ -28,7 +28,7 @@ const AddFile = () => {
         </div>
         {/* </div> */}
 
-        <div className="flex pb-10 h-[210px] border-dotted border-2 border-sky-500 w-full  rounded-3xl items-center justify-center ">
+        <div className="flex pb-10 ml-3 h-[210px] border-dotted border-2 border-sky-500 w-full  rounded-3xl items-center justify-center ">
           <HoverCard>
             <HoverCardTrigger>
               <AiFillFileAdd size={70} />
