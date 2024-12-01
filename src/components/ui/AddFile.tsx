@@ -33,10 +33,12 @@ const AddFile = () => {
             <HoverCardTrigger>
               <AiFillFileAdd size={70} />
             </HoverCardTrigger>
-            <HoverCardContent>THÊM FILE</HoverCardContent>
+            <HoverCardContent>
+              IN FILE
+            </HoverCardContent>
           </HoverCard>
         </div>
-        <div className="pt-[130px] mr-auto pl-3 w-full">
+        <div className="pt-[130px] mr-auto pl-3 w-full ">
           <RecentFile />
         </div>
       </div>

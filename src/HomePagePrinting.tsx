@@ -43,6 +43,32 @@ import { ResizablePanel, ResizablePanelGroup } from './components/ui/resizable'
 import AppSideBar from './components/ui/AppSideBar'
 import ContentAddFile from './components/ui/ContentAddFile'
 
+// const HomePagePrinting = () => {
+//   return (
+//       <div className="bg-gradient-to-r from-slate-100 to-red-200 ">
+//         <ResizablePanelGroup
+//           direction="horizontal"
+//           className="grid grid-flow-row-dense grid-cols-3 p-0 min-h-[800px]  min-w-sm md:min-w-md lg:min-w-lg xl:min-w-xl 2xl:min-w-2xl   "
+//         >
+//           <div className=" min-w-[110px] overflow-y-auto fixed sm: hidden md:block  h-full w-1/12  justify-center  ">
+//             <AppSideBar />
+//           </div>{" "}
+//           <ResizablePanel defaultSize={25}>
+//             <div className="mt-5 mr-3 md:ml-[110px] flex rounded-3xl rounded-t-3xl h-full  min-w-sm md:min-w-md lg:min-w-lg xl:min-w-xl 2xl:min-w-2xl  ">
+//               <ContentAddFile />
+//             </div>
+//           </ResizablePanel>
+//         </ResizablePanelGroup>
+//       </div>
+  
+//       /* <div className="bg-red-200 min-h-[1000px] min-w-sm md:min-w-md lg:min-w-lg xl:min-w-xl 2xl:min-w-2xl">
+//           <div className="h-[600px] ">
+//             <HomePage />
+//           </div>
+//         </div> */
+//   )
+// }
+
 const HomePagePrinting = () => {
   return (
       <div className="bg-gradient-to-r from-slate-100 to-red-200 ">
@@ -50,11 +76,11 @@ const HomePagePrinting = () => {
           direction="horizontal"
           className="grid grid-flow-row-dense grid-cols-3 p-0 min-h-[800px]  min-w-sm md:min-w-md lg:min-w-lg xl:min-w-xl 2xl:min-w-2xl   "
         >
-          <div className=" min-w-[110px] overflow-y-auto fixed sm: hidden md:block  h-full w-1/12  justify-center  ">
+          <div className="  sm: hidden md:block  h-full w-1/12  justify-center  ">
             <AppSideBar />
           </div>{" "}
           <ResizablePanel defaultSize={25}>
-            <div className="mt-5 mr-3 md:ml-[110px] flex rounded-3xl rounded-t-3xl h-full  min-w-sm md:min-w-md lg:min-w-lg xl:min-w-xl 2xl:min-w-2xl  ">
+            <div className="mt-5 mr-3  flex rounded-3xl rounded-t-3xl h-full  min-w-sm md:min-w-md lg:min-w-lg xl:min-w-xl 2xl:min-w-2xl  ">
               <ContentAddFile />
             </div>
           </ResizablePanel>

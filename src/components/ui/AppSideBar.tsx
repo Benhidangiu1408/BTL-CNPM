@@ -10,7 +10,7 @@ import { IoWalletSharp } from "react-icons/io5";
 import { MdHome } from "react-icons/md";
 const AppSideBar = () => {
   return (
-    <div className="flex flex-col  items-center border-none">
+    <div className="flex flex-col  items-center border-none fixed">
       <span className=" pt-14">
         {/* <AppSwitch isDarkMode={isDarkMode} handleToggle={handleToggle} /> */}
         <MdHome size={42} />
@@ -19,7 +19,7 @@ const AppSideBar = () => {
       <div className="pt-6">
         <RiAddBoxFill size={32} />
       </div>
-      <span className="font-semibold pt--1 pb-40">Thêm File</span>
+      <span className="font-semibold pt--1 pb-40">In File</span>
 
       <div className="">{/* <RiFileCopy2Fill size={22} /> */}</div>
       <span className="font-semibold pt--10">{/* Printing History */}</span>
@@ -30,10 +30,10 @@ const AppSideBar = () => {
       </div>
       <span className="font-semibold pt--1">Lịch Sử</span>
 
-      <div className="pt-10">
+      <div className="pt-10 ">
         <IoWalletSharp size={22} />
       </div>
-      <span className="font-semibold pt--1">Thanh Toán</span>
+      <span className="font-semibold pt--1 pl-2">Thanh Toán</span>
     </div>
   );
 };
