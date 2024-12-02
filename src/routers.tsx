@@ -6,7 +6,6 @@ import Printers from "./pages/PrintersPage/Printers";
 import Orders from "./pages/OrdersPage/Orders";
 import HomePagePrinting from "./HomePagePrinting";
 import Users from "./pages/UsersPage/Users";
-import PrintHistory from "./pages/HistoryPage/PrintHistory";
 // import PrivateRoute from "./PrivateRoute";
 
 //có link to, redirect,
@@ -43,7 +42,6 @@ const router = createBrowserRouter([
   { path: "/printers", element: <Printers /> },
   { path: "/orders", element: <Orders /> },
   { path: "/users", element: <Users /> },
-  { path: "/history", element: <PrintHistory /> },
 
 ]);
 
