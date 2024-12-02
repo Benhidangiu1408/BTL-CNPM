@@ -1,5 +1,7 @@
 import { /*React,*/ useState } from "react";
 import "./style.css";
+import { IoArrowBackCircle } from "react-icons/io5";
+import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -7,13 +9,16 @@ const Signin = () => {
   const togglePasswordVisibility = () => {
     setPasswordVisible(!passwordVisible);
   };
+  const navigate = useNavigate();
 
   return (
     <>
       <div className="login-page">
+        <button className="back-button" onClick={() => navigate(-1)}>
+          <IoArrowBackCircle />
+        </button>
         <div className="login-container">
           <div className="login-box">
-            <button className="back-button">←</button>
             <h2>ĐĂNG NHẬP</h2>
             <form>
               <div className="input-group">
