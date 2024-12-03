@@ -9,17 +9,19 @@ interface File {
   code: string;
 }
 
-interface PrintingPageProps {
-  files: File[];
-}
+// interface PrintingPageProps {
+//   files: File[];
+// }
 
-const PrintingPage: React.FC<PrintingPageProps> = ({ files }) => {
+
+
+const PrintingPage = () => {
   return (
     
     <div className="container">
       <h2 className="title">Printing Queue</h2>
       <div className="files-list">
-        {files.map((file) => (
+        {filesData.map((file) => (
           <div key={file.name} className="file-item">
             <div className="file-name">{file.name}</div>
             <div className="file-details">
@@ -44,15 +46,7 @@ const filesData: File[] = [
   { name: 'Document 3', count: 1, status: 'Pending', code: 'DEF-789' },
 ];
 
-// Main App component
-const App: React.FC = () => {
-  <>
-  return (
-    <div>
-      <PrintingPage files={filesData} />
-    </div>
-  );
-  </>
-};
 
-export default App;
+
+
+export default PrintingPage
