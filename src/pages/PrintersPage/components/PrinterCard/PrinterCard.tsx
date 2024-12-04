@@ -5,7 +5,7 @@ import PrinterDetails from './PrinterDetails';
 
 const PrinterCard: React.FC<{ printer: PrinterData }> = ({ printer }) => {
   return (
-    <div className="bg-[#FCF7FC] rounded-lg shadow-md flex flex-col w-64">
+    <div className="bg-[#FCF7FC] rounded-lg shadow-xl shadow-blue-100/50 flex flex-col w-64">
       <div className="p-4 flex-grow">
         <div className="text-center mb-2">
           <div className="flex items-center justify-center space-x-2">
