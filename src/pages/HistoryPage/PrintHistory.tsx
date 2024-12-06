@@ -67,8 +67,29 @@ export default function PrintHistory() {
         valueA = a.properties[subKey];
         valueB = b.properties[subKey];
       } else {
-        valueA = a[key];
-        valueB = b[key];
+        if (key === "printdate") {
+          valueA = new Date(a[key].split("/").reverse().join("/"));
+          valueB = new Date(b[key].split("/").reverse().join("/"));
+        } else {
+          valueA = a[key];
+          valueB = b[key];
+        }
+      }
+
+      if (typeof valueA === "string" && typeof valueB === "string") {
+        return direction === "asc"
+          ? valueA.localeCompare(valueB, "vi", { sensitivity: "base" })
+          : valueB.localeCompare(valueA, "vi", { sensitivity: "base" });
+      }
+
+      if (typeof valueA === "number" && typeof valueB === "number") {
+        return direction === "asc" ? valueA - valueB : valueB - valueA;
+      }
+
+      if (valueA instanceof Date && valueB instanceof Date) {
+        return direction === "asc"
+          ? valueA.getTime() - valueB.getTime()
+          : valueB.getTime() - valueA.getTime();
       }
 
       if (valueA < valueB) return direction === "asc" ? -1 : 1;
@@ -124,7 +145,7 @@ export default function PrintHistory() {
               <td>{file.properties.printnum}</td>
               <td>{file.properties.size}</td>
               <td>{file.properties.side}</td>
-              <td>{file.properties.size}</td>
+              <td>{file.properties.pagenum}</td>
               <td>{file.printdate}</td>
               <td></td>
             </tr>
@@ -132,7 +153,7 @@ export default function PrintHistory() {
         </tbody>
       </table>
 
-      {/* Phân trang */}
+      {/* Phân chia trang */}
       <div className="pagination">
         <button
           className="page-button"
@@ -159,7 +180,7 @@ export default function PrintHistory() {
         </button>
       </div>
 
-      {/* Mở bảng */}
+      {/* Tạo bảng */}
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal-content">
