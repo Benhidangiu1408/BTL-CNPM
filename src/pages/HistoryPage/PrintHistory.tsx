@@ -1,4 +1,3 @@
-//import React,
 import { useState } from "react";
 import "./PrintHistory.css";
 import { IoArrowBackCircle } from "react-icons/io5";
@@ -18,6 +17,8 @@ type PrintData = {
   };
   printerid: string;
 };
+
+type SortKey = keyof PrintData | keyof PrintData["properties"];
 
 export default function PrintHistory() {
   const navigate = useNavigate();
@@ -45,13 +46,24 @@ export default function PrintHistory() {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [sortConfig, setSortConfig] = useState<{
-    key: keyof PrintData;
+    key: SortKey;
     direction: "asc" | "desc";
   } | null>(null);
 
-  type SortKey =
-    | keyof PrintData
-    | `properties.${keyof PrintData["properties"]}`;
+  const isPropertyKey = (key: any): key is keyof PrintData["properties"] => {
+    return ["size", "side", "pagenum", "printnum"].includes(key);
+  };
+
+  const getValue = (obj: PrintData, key: SortKey) => {
+    if (isPropertyKey(key)) {
+      return obj.properties[key];
+    }
+    if (key === "printdate") {
+      return new Date(obj[key].split("/").reverse().join("/"));
+    }
+    return obj[key];
+  };
+
   const handleSort = (key: SortKey) => {
     const direction =
       sortConfig?.key === key && sortConfig.direction === "asc"
@@ -59,22 +71,8 @@ export default function PrintHistory() {
         : "asc";
 
     const sortedData = [...printData].sort((a, b) => {
-      let valueA: any;
-      let valueB: any;
-
-      if (key.startsWith("properties.")) {
-        const subKey = key.split(".")[1] as keyof PrintData["properties"];
-        valueA = a.properties[subKey];
-        valueB = b.properties[subKey];
-      } else {
-        if (key === "printdate") {
-          valueA = new Date(a[key].split("/").reverse().join("/"));
-          valueB = new Date(b[key].split("/").reverse().join("/"));
-        } else {
-          valueA = a[key];
-          valueB = b[key];
-        }
-      }
+      const valueA = getValue(a, key);
+      const valueB = getValue(b, key);
 
       if (typeof valueA === "string" && typeof valueB === "string") {
         return direction === "asc"
@@ -92,9 +90,13 @@ export default function PrintHistory() {
           : valueB.getTime() - valueA.getTime();
       }
 
-      if (valueA < valueB) return direction === "asc" ? -1 : 1;
-      if (valueA > valueB) return direction === "asc" ? 1 : -1;
-      return 0;
+      return direction === "asc"
+        ? valueA < valueB
+          ? -1
+          : 1
+        : valueA < valueB
+        ? 1
+        : -1;
     });
 
     setPrintData(sortedData);
@@ -153,7 +155,6 @@ export default function PrintHistory() {
         </tbody>
       </table>
 
-      {/* Phân chia trang */}
       <div className="pagination">
         <button
           className="page-button"
@@ -180,7 +181,6 @@ export default function PrintHistory() {
         </button>
       </div>
 
-      {/* Tạo bảng */}
       {isModalOpen && (
         <div className="modal-overlay">
           <div className="modal-content">
@@ -189,12 +189,10 @@ export default function PrintHistory() {
               <li onClick={() => handleSort("name")}>Tên người in</li>
               <li onClick={() => handleSort("filename")}>Tên file</li>
               <li onClick={() => handleSort("printerid")}>ID Máy in</li>
-              <li onClick={() => handleSort("properties.printnum")}>
-                Số lượng
-              </li>
-              <li onClick={() => handleSort("properties.size")}>Định dạng</li>
-              <li onClick={() => handleSort("properties.side")}>Số mặt in</li>
-              <li onClick={() => handleSort("properties.pagenum")}>Trang in</li>
+              <li onClick={() => handleSort("printnum")}>Số lượng</li>
+              <li onClick={() => handleSort("size")}>Định dạng</li>
+              <li onClick={() => handleSort("side")}>Số mặt in</li>
+              <li onClick={() => handleSort("pagenum")}>Trang in</li>
               <li onClick={() => handleSort("printdate")}>Thời gian</li>
             </ul>
             <button
