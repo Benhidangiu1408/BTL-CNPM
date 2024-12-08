@@ -3,6 +3,11 @@ import "./style.css";
 import { IoArrowBackCircle } from "react-icons/io5";
 import { useNavigate } from "react-router-dom";
 import users from "@/data/users";
+import printingfiles from "@/data/printingfiles";
+import useStudentStore from "@/current_user/user";
+import useOrderStore from "@/current_user/order";
+import usePrinterStore from "@/current_user/availablePrinters";
+import printers from "@/data/printers";
 
 const Signin = () => {
   const [email, setEmail] = useState("");
@@ -15,12 +20,43 @@ const Signin = () => {
   };
 
   const navigate = useNavigate();
+  const { login } = useStudentStore(); // Lấy hàm login
+  const { addOrder } = useOrderStore(); // Lấy hàm addOrder
+  const { addPrinter } = usePrinterStore(); // Lấy hàm addPrinter 
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const user = users.find((user) => user.mail === email);
     if (user) {
-      navigate("/nextPage");
+      login(user);
+
+      // Lọc các bản in liên quan đến người dùng
+      const userPrintingFiles = printingfiles.filter(
+        (file) => file.name === user.name
+      );
+
+      // Lưu tất cả các bản in vào order
+      userPrintingFiles.forEach((file) => {
+        addOrder({
+          name: file.name,
+          printdate: file.printdate,
+          filename: file.filename,
+          properties: {
+            size: file.properties.size,
+            side: file.properties.side,
+            pagenum: file.properties.pagenum,
+            printnum: file.properties.printnum,
+          },
+          printerid: file.printerid,
+        });
+      });
+
+      // Lưu tất cả các máy in vào availablePrinters
+      printers.forEach((printer) => {
+        addPrinter(printer); 
+      });
+
+      navigate("/homepage");
     } else {
       setErrorMessage("Tài khoản hoặc mật khẩu không đúng!");
     }
