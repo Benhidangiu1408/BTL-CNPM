@@ -3,7 +3,8 @@ import "./PrintHistory.css";
 import { IoArrowBackCircle } from "react-icons/io5";
 import { FiSliders } from "react-icons/fi";
 import { useNavigate } from "react-router-dom";
-import printingfiles from "@/data/printingfiles";
+import useStudentStore from "@/current_user/user"; 
+import useOrderStore from "@/current_user/order"; 
 
 type PrintData = {
   name: string;
@@ -22,8 +23,13 @@ type SortKey = keyof PrintData | keyof PrintData["properties"];
 
 export default function PrintHistory() {
   const navigate = useNavigate();
+  const { info } = useStudentStore(); // Lấy thông tin người dùng từ store
+  const { orders } = useOrderStore(); // Lấy danh sách đơn hàng từ store
 
-  const [printData, setPrintData] = useState<PrintData[]>(printingfiles);
+  // Lọc các đơn hàng của người dùng hiện tại
+  const userOrders = orders.filter((order) => order.name === info.name);
+
+  const [printData, setPrintData] = useState<PrintData[]>(userOrders);
 
   const itemsPerPage = 7;
   const [currentPage, setCurrentPage] = useState(1);
