@@ -120,3 +120,4 @@ export default [
     pagebalance: 9,
   },
 ];
+
