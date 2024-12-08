@@ -8,6 +8,8 @@ import HomePagePrinting from "./HomePagePrinting";
 import Users from "./pages/UsersPage/Users";
 import PrivateRoute from "./PrivateRoute";
 import ContentAddFile from "./components/ui/ContentAddFile";
+import PrintHistory from "./pages/HistoryPage/PrintHistory";
+
 
 //có link to, redirect,
 
@@ -36,26 +38,6 @@ const router = createBrowserRouter([
   //   ],
   // },
 
-  // {
-  //   element: <PrivateRoute />,
-  //   children: [
-  //     {
-  //       path: "user", // muốn vô dc đây thì phải đi qa private route
-  //       element: <UserPage />,
-  //       children: [{ path: ":id", element: <UserDetailPage /> }],
-  //     },
-  //   ],
-  // },
-
-  // { path: "/", element: <HomePagePrinting /> },
-  // { path: "/homepage", element: <HomePage /> },
-  // { path: "/login", element: <Signin /> },
-  // { path: "/printing", element: <PrintingPage /> },
-  // // { path: "/configure", element: < },
-  // { path: "/printers", element: <Printers /> },
-  // { path: "/orders", element: <Orders /> },
-  // { path: "/users", element: <Users /> },
-
   // { path: "/homepage", element: <HomePagePrinting /> },
   { path: "/", element: <HomePage /> },
   { path: "/login", element: <Signin /> },
@@ -72,6 +54,7 @@ const router = createBrowserRouter([
           { path: "printers", element: <Printers /> }, // Becomes /homepage/printers
           { path: "orders", element: <Orders /> }, // Becomes /homepage/orders
           { path: "users", element: <Users /> }, // Becomes /homepage/users
+          { path: "/history", element: <PrintHistory /> },
         ],
       },
         
