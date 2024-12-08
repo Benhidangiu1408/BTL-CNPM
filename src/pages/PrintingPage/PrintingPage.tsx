@@ -10,7 +10,7 @@ const PrintingPage = () => {
   return (
     
     <div className="container">
-      <h2 className="title">Printing Queue</h2>
+      <h2 className="title">Tiến trình in</h2>
       <div className="files-list">
         {orders.map((order,index) => (
           <div key={order.filename} className="file-item">
@@ -18,7 +18,7 @@ const PrintingPage = () => {
             <div className="file-details">
               <div className="file-count">{order.properties.printnum} bản</div>
               <div className="file-code">{order.printerid}</div>
-              <div className="file-status">{index%2===1?"Pending":"Completed"}</div>
+              <div className="file-status">{index%2===1?"Đang in":"Hoàn thành"}</div>
             </div>
             <button className="cancel-button">Hủy</button>
           </div>
