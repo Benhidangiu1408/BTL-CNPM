@@ -42,9 +42,6 @@ const useStudentStore = create<studentStore>()(persist(
             pagebalance: 300
         }
       })),
-  
-
-    
     // GetInfo: Return the current student info
     getInfo: () => get().info,
 

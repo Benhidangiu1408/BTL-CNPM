@@ -87,7 +87,7 @@ const ConfigurePrint = ({ fileName, closePreview }: Props) => {
       openDialog();
     } else {
       const now = new Date();
-      const dateTimeString = now.toLocaleDateString(); // Example: "12/4/2024, 10:35:20 AM"
+      const dateTimeString = now.toLocaleString(); // Example: "12/4/2024, 10:35:20 AM"
       setPageBalance(info.pagebalance - totalPages);
       console.log(info.pagebalance);
       addOrder({
@@ -102,7 +102,7 @@ const ConfigurePrint = ({ fileName, closePreview }: Props) => {
         },
         printerid: printer,
       });
-      navigate("/printing");
+      navigate("/homepage/printing");
 
     }
   };
@@ -151,13 +151,16 @@ const ConfigurePrint = ({ fileName, closePreview }: Props) => {
           setPrinter(value);
         }}
       >
-        <SelectTrigger className=" bg-red-200 !important text-black">
-          <SelectValue placeholder="BX-50" className="text-black" />
+        <SelectTrigger className=" bg-red-200 !important text-black ">
+          <SelectValue  />
         </SelectTrigger>
         <SelectContent className="bg-red-200 !important text-black">
-          <SelectItem value="light">Light</SelectItem>
-          <SelectItem value="dark">Dark</SelectItem>
-          <SelectItem value="system">System</SelectItem>
+          <SelectItem value="TML-3">TML-3</SelectItem>
+          <SelectItem value="STMA-8">STMA-8</SelectItem>
+          <SelectItem value="BASM-75">BASM-75</SelectItem>
+          <SelectItem value="QBON-203">QBON-203</SelectItem>
+          <SelectItem value="ZTPG-406">ZTPG-406</SelectItem>
+          <SelectItem value="VRMH-92">VRMH-92</SelectItem>
         </SelectContent>
       </Select>
 
@@ -169,7 +172,7 @@ const ConfigurePrint = ({ fileName, closePreview }: Props) => {
         }}
       >
         <SelectTrigger className="bg-red-200 !important text-black">
-          <SelectValue placeholder="A4" className="text-black" />
+          <SelectValue />
         </SelectTrigger>
         <SelectContent className="bg-red-200 !important text-black">
           <SelectItem value="A5">A5</SelectItem>
@@ -179,7 +182,7 @@ const ConfigurePrint = ({ fileName, closePreview }: Props) => {
       </Select>
 
       <RadioGroup
-        defaultValue="option-one"
+        defaultValue="2 Mặt"
         className="flex flex-row text-black mt-3"
         onValueChange={(value) => {
           const numericValue = paperSided[value];
@@ -213,7 +216,7 @@ const ConfigurePrint = ({ fileName, closePreview }: Props) => {
           id="number"
           placeholder="1"
           onChange={(e) => setPageCount(Number(e.target.value))}
-          className="bg-red-200 !important text-black placeholder:text-black"
+          className="bg-red-200 !important text-black placeholder:text-gray-500"
         />
       </div>
 
@@ -226,29 +229,29 @@ const ConfigurePrint = ({ fileName, closePreview }: Props) => {
           id="number"
           placeholder="1"
           onChange={(e) => setCopyCount(Number(e.target.value))}
-          className="bg-red-200 !important text-black  placeholder:text-black"
+          className="bg-red-200 !important text-black  placeholder:text-gray-500"
         />
       </div>
 
       {/* Print Button */}
-      <div className="flex justify-between mt-3">
+      <div className="flex justify-between mt-8">
         <Button
-          className="  text-black hover:text-blue-700 justify-start "
+          className="  text-black hover:text-gray-700 hover:bg-red-100 justify-start bg-red-200 mr-[15px] "
           onClick={handlePrint}
         >
           {/* <Link to="/printing">
             {" "}
             <div className=" border border-3 bg-red-200 rounded w-14">In</div>
           </Link> */}
-          <div className=" border border-3 bg-red-200 rounded w-14">In</div>
+          <div className="  bg-red-200 hover:bg-red-100 rounded w-14">In</div>
         </Button>
 
         <Button
-          className=" text-black hover:text-gray-700  border-7 border-rose-500 ml-auto"
+          className=" text-black hover:text-gray-700 bg-red-100 hover:bg-red-50 border-rose-500 ml-auto"
           // onClick={closePreview}
           onClick={openDialog2}
         >
-          <div className=" border border-3 bg-red-100 rounded w-14">Hủy</div>
+          <div className="  bg-red-100 hover:bg-red-50 rounded w-14">Hủy</div>
         </Button>
       </div>
     </div>

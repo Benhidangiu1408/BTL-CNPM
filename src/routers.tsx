@@ -40,7 +40,7 @@ const router = createBrowserRouter([
 
   // { path: "/homepage", element: <HomePagePrinting /> },
   { path: "/", element: <HomePage /> },
-  { path: "/login", element: <Signin /> },
+  { path: "/signin", element: <Signin /> },
   {
     element: <PrivateRoute />,
     children: [
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
           { path: "printers", element: <Printers /> }, // Becomes /homepage/printers
           { path: "orders", element: <Orders /> }, // Becomes /homepage/orders
           { path: "users", element: <Users /> }, // Becomes /homepage/users
-          { path: "/history", element: <PrintHistory /> },
+          { path: "history", element: <PrintHistory /> },
         ],
       },
         

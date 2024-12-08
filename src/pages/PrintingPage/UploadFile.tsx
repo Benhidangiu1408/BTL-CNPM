@@ -152,7 +152,7 @@ const FileUploader: React.FC = () => {
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
-      ;{/* Preview Modal */}
+      {/* Preview Modal */}
       {showPreview && (
         <>
           <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50 ">

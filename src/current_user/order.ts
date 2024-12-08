@@ -18,20 +18,24 @@ export interface OrderStore {
     orders: order[]; // List of orders
     addOrder: (order: order) => void; // Add a new order
     getAllOrders: () => order[]; // Get all orders
-   
+    orderLogout:()=>void
   }
 const useOrderStore=create<OrderStore>()(persist(
   (set,get)=>({
    orders:[],
     // Add an order to the first position in the array
-  addOrder: (order) =>
+    addOrder: (order) =>
     set((state) => ({
       orders: [order, ...state.orders],
     })),
-
  
    // Return all orders
    getAllOrders: () => get().orders, 
+
+   orderLogout: () =>
+    set(() => ({
+      orders:[]
+    })),
 
 }),
 { name: "order-store" }

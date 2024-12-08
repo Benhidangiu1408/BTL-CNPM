@@ -8,12 +8,15 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import useOrderStore from "@/current_user/order";
+import { useNavigate } from "react-router-dom";
+
 
 const RecentFile = () => {
+  const navigate = useNavigate();
   const { orders } = useOrderStore();
   return (
     <>
-      <div className="flex flex-row gap-4">
+      <div className="flex flex-row gap-4" onClick={() => navigate("/homepage/history")}>
         <div className="font-semibold text-xl">NHỮNG TÀI LIỆU GẦN ĐÂY</div>
         <FaArrowCircleRight size={25} />
       </div>
