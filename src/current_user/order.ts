@@ -19,6 +19,7 @@ export interface OrderStore {
     addOrder: (order: order) => void; // Add a new order
     getAllOrders: () => order[]; // Get all orders
     orderLogout:()=>void
+    deleteOrderByName: (name:string) =>void
   }
 const useOrderStore=create<OrderStore>()(persist(
   (set,get)=>({
@@ -36,6 +37,10 @@ const useOrderStore=create<OrderStore>()(persist(
     set(() => ({
       orders:[]
     })),
+    deleteOrderByName: (name:string) =>
+      set((state) => ({
+        orders: state.orders.filter((order) => order.name !== name),
+      })),
 
 }),
 { name: "order-store" }

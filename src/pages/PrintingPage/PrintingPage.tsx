@@ -6,7 +6,7 @@ import useOrderStore from '@/current_user/order';
 
 
 const PrintingPage = () => {
-  const{orders}=useOrderStore()
+  const{orders,deleteOrderByName}=useOrderStore()
   return (
     
     <div className="container">
@@ -18,9 +18,9 @@ const PrintingPage = () => {
             <div className="file-details">
               <div className="file-count">{order.properties.printnum} bản</div>
               <div className="file-code">{order.printerid}</div>
-              <div className="file-status">{index%2===1?"Pending":"Completed"}</div>
+              <div className="file-status">{index%2===0?"Pending":"Completed"}</div>
             </div>
-            <button className="cancel-button">Hủy</button>
+            <button className="cancel-button" onClick={()=>deleteOrderByName(order.filename)}>Hủy</button>
           </div>
         ))}
       </div>

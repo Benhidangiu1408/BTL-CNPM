@@ -101,10 +101,10 @@ const AppSideBar = () => {
         Trạng Thái{" "}
       </span> */}
 
-      <div className="pt-10 ">
+      <div className="pt-10 " onClick={() => navigate("/homepage/printers")} >
         <TiPrinter size={30} />
       </div>
-      <span className="font-semibold pt--1 pl-2">Máy in </span>
+      <span className="font-semibold pt--1 pl-2" onClick={() => navigate("/homepage/printers")}>Máy in </span>
 
       <div className="pt-10 " onClick={() => (openDialog())}>
         <TbLogout2 size={30} />
