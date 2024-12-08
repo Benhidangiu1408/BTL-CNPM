@@ -22,7 +22,7 @@ const Signin = () => {
   const navigate = useNavigate();
   const { login } = useStudentStore(); // Lấy hàm login
   const { addOrder } = useOrderStore(); // Lấy hàm addOrder
-  const { addPrinter } = usePrinterStore(); // Lấy hàm addPrinter 
+  const { addPrinter } = usePrinterStore(); // Lấy hàm addPrinter
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -53,7 +53,7 @@ const Signin = () => {
 
       // Lưu tất cả các máy in vào availablePrinters
       printers.forEach((printer) => {
-        addPrinter(printer); 
+        addPrinter(printer);
       });
 
       navigate("/homepage");
