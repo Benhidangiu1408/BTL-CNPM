@@ -69,13 +69,13 @@ const HomePage = () => {
         </div>
       </header>
 
-      <main className='main' style={{ height:'75vh'}}>
+      <main className='main' style={{ height:'70vh'}}>
         <div
           className="background"
           style={{
             backgroundImage: `url(${HCMUTBG})`, // Dynamic image
             height: imgHeight ? `${imgHeight}px` : "auto", // Dynamic height
-            maxHeight: "75vh", // Set maximum height
+            maxHeight: "70vh", // Set maximum height
             backgroundSize: "cover", // Adjust background size
             backgroundRepeat: "no-repeat", // Prevent background from repeating
             backgroundPosition: "center", // Center the background image

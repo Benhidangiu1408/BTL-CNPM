@@ -2,23 +2,10 @@
 
 
 .container {
-    padding-left: 20px; /* Tạo khoảng cách bên trái */
-    padding-right: 20px; /* Tạo khoảng cách bên phải */
+    padding-left: 10px; /* Tạo khoảng cách bên trái */
+    padding-right: 10px; /* Tạo khoảng cách bên phải */
   }
 
-  @media (min-width: 768px) {
-    .container {
-      padding-left: 40px;
-      padding-right: 40px;
-    }
-  }
-  
-  @media (min-width: 1024px) {
-    .container {
-      padding-left: 80px;
-      padding-right: 80px;
-    }
-  }
 
 .header {
     background: linear-gradient(to right, #FFFFFF, #FFBBB9);
