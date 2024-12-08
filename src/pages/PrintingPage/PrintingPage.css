@@ -25,12 +25,13 @@ html, body {
   
   .file-item {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Distribute space between children */
     align-items: center;
     background-color: white;
     padding: 15px;
     border-radius: 5px;
   }
+  
   
   .file-name {
     font-size: 18px;
@@ -40,6 +41,7 @@ html, body {
   .file-details {
     display: flex;
     gap: 15px;
+    margin-right: 20px; /* Add some margin to create space from the cancel button */
   }
   
   .file-count {
@@ -65,12 +67,3 @@ html, body {
     cursor: pointer;
   }
   
-  .close-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
