@@ -10,7 +10,7 @@ export interface printer{
     brand:string;
     model:string;
     location:location
-    description:number
+    description:string
 }
 export interface printerStore{
     printers:printer[],
