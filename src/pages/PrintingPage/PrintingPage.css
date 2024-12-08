@@ -42,20 +42,25 @@ html, body {
     display: flex;
     gap: 15px;
     margin-right: 20px; /* Add some margin to create space from the cancel button */
+    justify-content: space-between;
+    width: 300px;
   }
   
   .file-count {
     font-size : 16px;
+    flex-shrink: 0;
   }
   
   .file-code {
     font-size: 16px;
     color: #555;
+    flex-shrink: 0;
   }
   
   .file-status {
     font-size: 16px;
     font-weight: bold;
+    flex-shrink: 0;
   }
   
   .cancel-button {
