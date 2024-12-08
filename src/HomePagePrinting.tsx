@@ -42,6 +42,8 @@ import React from 'react'
 import { ResizablePanel, ResizablePanelGroup } from './components/ui/resizable'
 import AppSideBar from './components/ui/AppSideBar'
 import ContentAddFile from './components/ui/ContentAddFile'
+import { Outlet } from "react-router-dom";
+
 
 // const HomePagePrinting = () => {
 //   return (
@@ -81,7 +83,8 @@ const HomePagePrinting = () => {
           </div>{" "}
           <ResizablePanel defaultSize={25}>
             <div className="mt-5 mr-3  flex rounded-3xl rounded-t-3xl h-full  min-w-sm md:min-w-md lg:min-w-lg xl:min-w-xl 2xl:min-w-2xl  ">
-              <ContentAddFile />
+              {/* <ContentAddFile /> */}
+              <Outlet />
             </div>
           </ResizablePanel>
         </ResizablePanelGroup>
