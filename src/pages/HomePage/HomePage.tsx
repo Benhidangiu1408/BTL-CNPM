@@ -69,11 +69,7 @@ const HomePage = () => {
         </div>
       </header>
 
-<<<<<<< Updated upstream
-      <main className="main">
-=======
       <main className='main' style={{ height:'75vh'}}>
->>>>>>> Stashed changes
         <div
           className="background"
           style={{
