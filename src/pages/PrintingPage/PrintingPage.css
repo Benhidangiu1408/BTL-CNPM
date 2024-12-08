@@ -36,14 +36,15 @@ html, body {
   .file-name {
     font-size: 18px;
     font-weight: bold;
+    flex-grow: 1;
   }
   
   .file-details {
     display: flex;
     gap: 15px;
-    margin-right: 20px; /* Add some margin to create space from the cancel button */
+    margin-right: 10px; /* Add some margin to create space from the cancel button */
     justify-content: space-between;
-    width: 300px;
+    width: 200px;
   }
   
   .file-count {
