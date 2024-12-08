@@ -75,7 +75,7 @@ const HomePage = () => {
           style={{
             backgroundImage: `url(${HCMUTBG})`, // Dynamic image
             height: imgHeight ? `${imgHeight}px` : "auto", // Dynamic height
-            maxHeight: "80vh", // Set maximum height
+            maxHeight: "75vh", // Set maximum height
             backgroundSize: "cover", // Adjust background size
             backgroundRepeat: "no-repeat", // Prevent background from repeating
             backgroundPosition: "center", // Center the background image
