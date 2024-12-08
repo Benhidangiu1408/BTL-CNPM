@@ -123,7 +123,7 @@ const HomePage = () => {
         </div>
         <div>
           <button>
-            <div className="text-xl font-bold">Đăng nhập để in tài liệu</div>
+            <Link to="/signin" className="text-xl font-bold">Đăng nhập để in tài liệu</Link>
           </button>
         </div>
       </footer>

@@ -1,11 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 
-.container {
-    padding-left: 10px; /* Tạo khoảng cách bên trái */
-    padding-right: 10px; /* Tạo khoảng cách bên phải */
-  }
-
 
 .header {
     background: linear-gradient(to right, #FFFFFF, #FFBBB9);
@@ -17,8 +12,11 @@
   }
   
   .header .logo {
-    display: flex;
+    display: flex; /* Ensure logo and text align properly */
     align-items: center;
+    justify-content: flex-start; /* Align content to the left */
+    position: relative; /* Allows precise placement */
+    margin-left: 50px; /* Adjust this value for spacing from the left */
   }
   
   .header .logo img {
@@ -29,6 +27,7 @@
   .header .buttons {
     display: flex;
     align-items: center;
+    margin-right: 50px;
   }
   
   .header .button {
@@ -41,12 +40,12 @@
   }
   
   .header .button:hover {
-    opacity: 0.9;
-    background-color: var(--customPink);
+    opacity: 0.6;
+    background-color: white;
   }
   
   .header .button + .button {
-    margin-left: 24px;
+    margin-left: 30px;
   }
 
   body {
@@ -98,4 +97,6 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
+    margin-left: 50px;
+    margin-right: 50px;
   }
