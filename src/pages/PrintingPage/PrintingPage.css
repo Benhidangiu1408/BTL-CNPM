@@ -25,12 +25,13 @@ html, body {
   
   .file-item {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Distribute space between children */
     align-items: center;
     background-color: white;
     padding: 15px;
     border-radius: 5px;
   }
+  
   
   .file-name {
     font-size: 18px;
@@ -40,20 +41,26 @@ html, body {
   .file-details {
     display: flex;
     gap: 15px;
+    margin-right: 20px; /* Add some margin to create space from the cancel button */
+    justify-content: space-between;
+    width: 300px;
   }
   
   .file-count {
     font-size : 16px;
+    flex-shrink: 0;
   }
   
   .file-code {
     font-size: 16px;
     color: #555;
+    flex-shrink: 0;
   }
   
   .file-status {
     font-size: 16px;
     font-weight: bold;
+    flex-shrink: 0;
   }
   
   .cancel-button {
@@ -65,12 +72,3 @@ html, body {
     cursor: pointer;
   }
   
-  .close-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-    margin-top: 20px;
-  }

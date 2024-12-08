@@ -24,7 +24,6 @@ const PrintingPage = () => {
           </div>
         ))}
       </div>
-      <button className="close-button">Đóng</button>
     </div>
   );
   
