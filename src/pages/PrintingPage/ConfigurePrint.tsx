@@ -40,9 +40,10 @@ const ConfigurePrint = ({ fileName, closePreview }: Props) => {
   const [sided, setSided] = useState<number>(1);
   const [printer, setPrinter] = useState<string>("");
   const { addOrder, orders } = useOrderStore();
-  const { info, setPageBalance,logout } = useStudentStore();
+  const { info, setPageBalance, logout } = useStudentStore();
   const [isDialogOpen, setIsDialogOpen] = useState(false); // State to control dialog visibility
   const [isDialogOpen2, setIsDialogOpen2] = useState(false); // State to control dialog visibility
+  const [isDialogOpen3, setIsDialogOpen3] = useState(false); // State to control dialog visibility
 
   const navigate = useNavigate();
 
@@ -65,6 +66,15 @@ const ConfigurePrint = ({ fileName, closePreview }: Props) => {
     setIsDialogOpen2(false); // Close the AlertDialog
   };
 
+  const openDialog3 = () => {
+    setIsDialogOpen3(true); // Open the AlertDialog
+  };
+
+  // Function to close the dialog
+  const closeDialog3 = () => {
+    setIsDialogOpen3(false); // Close the AlertDialog
+  };
+
   // Mapping for paper sizes
   const paperSided: Record<string, number> = {
     "1 Mặt": 1, // A3
@@ -82,7 +92,7 @@ const ConfigurePrint = ({ fileName, closePreview }: Props) => {
       totalPages /= 2;
     }
     console.log(totalPages);
-    console.log(MAX_ALLOWED_PAGES)
+    console.log(MAX_ALLOWED_PAGES);
     if (totalPages > MAX_ALLOWED_PAGES) {
       openDialog();
     } else {
@@ -102,8 +112,7 @@ const ConfigurePrint = ({ fileName, closePreview }: Props) => {
         },
         printerid: printer,
       });
-      navigate("/homepage/printing");
-
+      openDialog3();
     }
   };
   return (
@@ -117,8 +126,8 @@ const ConfigurePrint = ({ fileName, closePreview }: Props) => {
           <AlertDialogHeader>
             <AlertDialogTitle>Bạn không đủ số trang để in</AlertDialogTitle>
             <AlertDialogDescription>
-              Bạn chỉ còn {MAX_ALLOWED_PAGES} trang để in.
-              Hãy chọn ít trang hơn hoặc mua thêm trang in
+              Bạn chỉ còn {MAX_ALLOWED_PAGES} trang để in. Hãy chọn ít trang hơn
+              hoặc mua thêm trang in
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
@@ -146,13 +155,31 @@ const ConfigurePrint = ({ fileName, closePreview }: Props) => {
         </AlertDialogContent>
       </AlertDialog>
 
+      <AlertDialog open={isDialogOpen3}>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>
+              Chúng tôi sẽ chuyển hướng đến trang xem trạng thái In
+            </AlertDialogTitle>
+            <AlertDialogDescription>
+              Bạn có thể xem cập nhật trạng thái In tại mục "Trạng thái".
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogAction onClick={() => navigate("/homepage/printing")}>
+              OK
+            </AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
+
       <Select
         onValueChange={(value) => {
           setPrinter(value);
         }}
       >
         <SelectTrigger className=" bg-red-200 !important text-black ">
-          <SelectValue  />
+          <SelectValue />
         </SelectTrigger>
         <SelectContent className="bg-red-200 !important text-black">
           <SelectItem value="TML-3">TML-3</SelectItem>
