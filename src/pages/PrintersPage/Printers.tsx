@@ -23,7 +23,7 @@ const Printers: React.FC = () => {
   const currentPrinters = printersData.slice(indexOfFirstPrinter, indexOfLastPrinter);
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-[#F0F4F7] to-[#FCCBCE] flex flex-col">
+    <div className="h-screen bg-gradient-to-r from-[#F0F4F7] to-[#FCCBCE] w-full flex flex-col">
       <div className="flex-1 p-8 flex flex-col">
         <div className="max-w-7xl mx-auto w-full flex-1 flex flex-col">
           <Header />

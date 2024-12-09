@@ -45,7 +45,7 @@ const AppSideBar = () => {
 
   return (
     <div className="flex flex-col  items-center border-none fixed">
-      <span className=" pt-14" onClick={() => navigate("/homepage")}>
+      <span className=" pt-14 cursor-pointer" onClick={() => navigate("/homepage")}>
         {/* <AppSwitch isDarkMode={isDarkMode} handleToggle={handleToggle} /> */}
         <MdHome size={42} />
       </span>
@@ -67,11 +67,11 @@ const AppSideBar = () => {
       </div>
       <span className="font-semibold pt--1 pb-40">In File</span> */}
 
-      <div className="pt-6 " onClick={() => navigate("/homepage/printing")}>
+      <div className="pt-6 cursor-pointer" onClick={() => navigate("/homepage/printing")}>
         <TbProgressCheck size={30} />
       </div>
       <span
-        className="font-semibold pt--1 pl-2"
+        className="font-semibold pt--1 pl-2 cursor-pointer"
         onClick={() => navigate("/homepage/printing")}
       >
         Trạng Thái{" "}
@@ -81,11 +81,11 @@ const AppSideBar = () => {
       <span className="font-semibold pt--10">{/* Printing History */}</span>
       <div className="pt-6"></div>
 
-      <div className="pt-[270px]" onClick={() => navigate("/homepage/history")}>
+      <div className="pt-[270px] cursor-pointer" onClick={() => navigate("/homepage/history")}>
         <FaFileContract size={28} />
       </div>
       <span
-        className="font-semibold pt--1"
+        className="font-semibold pt--1 cursor-pointer"
         onClick={() => navigate("/homepage/history")}
       >
         Lịch Sử
@@ -101,16 +101,16 @@ const AppSideBar = () => {
         Trạng Thái{" "}
       </span> */}
 
-      <div className="pt-10 " onClick={() => navigate("/homepage/printers")} >
+      <div className="pt-10 cursor-pointer" onClick={() => navigate("/homepage/printers")} >
         <TiPrinter size={30} />
       </div>
-      <span className="font-semibold pt--1 pl-2" onClick={() => navigate("/homepage/printers")}>Máy in </span>
+      <span className="font-semibold pt--1 pl-2 cursor-pointer" onClick={() => navigate("/homepage/printers")}>Máy in </span>
 
-      <div className="pt-10 " onClick={() => (openDialog())}>
+      <div className="pt-10 cursor-pointer" onClick={() => (openDialog())}>
         <TbLogout2 size={30} />
       </div>
       <span
-        className="font-semibold pt--1 pl-2"
+        className="font-semibold pt--1 pl-2 cursor-pointer"
         onClick={() => (openDialog())}
       >
         Đăng xuất
