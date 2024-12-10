@@ -12,6 +12,114 @@ export default [
       "printerid": "ABC-12"
     },
     {
+      "name": "Hoàng Gia Bảo",
+      "printdate": "22/12/2023",
+      "filename": "report.docx",
+      "properties": {
+        "size": "A3",
+        "side": 2,
+        "pagenum": 18,
+        "printnum": 2
+      },
+      "printerid": "XYZ-34"
+    },
+    {
+      "name": "Hoàng Gia Bảo",
+      "printdate": "05/01/2024",
+      "filename": "notes.txt",
+      "properties": {
+        "size": "A4",
+        "side": 1,
+        "pagenum": 10,
+        "printnum": 4
+      },
+      "printerid": "DEF-56"
+    },
+    {
+      "name": "Hoàng Gia Bảo",
+      "printdate": "10/02/2024",
+      "filename": "summary.pdf",
+      "properties": {
+        "size": "A4",
+        "side": 2,
+        "pagenum": 7,
+        "printnum": 1
+      },
+      "printerid": "GHI-78"
+    },
+    {
+      "name": "Hoàng Gia Bảo",
+      "printdate": "20/02/2024",
+      "filename": "project_plan.docx",
+      "properties": {
+        "size": "A3",
+        "side": 1,
+        "pagenum": 14,
+        "printnum": 2
+      },
+      "printerid": "JKL-90"
+    },
+    {
+      "name": "Hoàng Gia Bảo",
+      "printdate": "28/03/2024",
+      "filename": "invoice.pdf",
+      "properties": {
+        "size": "A4",
+        "side": 2,
+        "pagenum": 16,
+        "printnum": 3
+      },
+      "printerid": "MNO-12"
+    },
+    {
+      "name": "Hoàng Gia Bảo",
+      "printdate": "10/04/2024",
+      "filename": "thesis.txt",
+      "properties": {
+        "size": "A4",
+        "side": 1,
+        "pagenum": 8,
+        "printnum": 5
+      },
+      "printerid": "PQR-34"
+    },
+    {
+      "name": "Hoàng Gia Bảo",
+      "printdate": "20/05/2024",
+      "filename": "slides.pdf",
+      "properties": {
+        "size": "A3",
+        "side": 2,
+        "pagenum": 20,
+        "printnum": 1
+      },
+      "printerid": "STU-56"
+    },
+    {
+      "name": "Hoàng Gia Bảo",
+      "printdate": "15/06/2024",
+      "filename": "proposal.docx",
+      "properties": {
+        "size": "A4",
+        "side": 1,
+        "pagenum": 9,
+        "printnum": 3
+      },
+      "printerid": "VWX-78"
+    },
+    {
+      "name": "Hoàng Gia Bảo",
+      "printdate": "05/07/2024",
+      "filename": "research.txt",
+      "properties": {
+        "size": "A4",
+        "side": 2,
+        "pagenum": 15,
+        "printnum": 2
+      },
+      "printerid": "YZA-90"
+    },
+    {
       "name": "Nguyễn Minh Chi",
       "printdate": "09/03/2024",
       "filename": "file2.docx",
